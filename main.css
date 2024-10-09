@@ -1,0 +1,75 @@
+.container {
+  background-color: #4CAF50;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+h2 {
+  color: #261740;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li {
+  margin-bottom: 10px;
+}
+ul li:nth-child(1) label {
+  color: #261740;
+}
+ul li:nth-child(1) input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+}
+ul li:nth-child(2) label {
+  color: #261740;
+}
+ul li:nth-child(2) input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+}
+ul li:nth-child(n + 3) input[type="radio"] {
+  margin-right: 5px;
+}
+ul li:nth-child(3) label {
+  background-color: #0055ff;
+}
+ul li:nth-child(4) label {
+  background-color: #ff00b7;
+}
+ul li:nth-child(5) label {
+  background-color: #ba3030;
+}
+ul li:nth-child(6) label {
+  background-color: #969a80;
+}
+ul li:nth-child(7) label {
+  background-color: #0048ff;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #a04545;
+  color: #261740;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #8e3d3d;
+}
+a {
+  color: #ddff00;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

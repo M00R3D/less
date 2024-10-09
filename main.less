@@ -1,0 +1,99 @@
+@primary-color: #4CAF50;
+@secondary-color: #f0f0f0;
+@text-color: rgb(38, 23, 64);
+@button-color: #a04545;
+@link-color: #ddff00;
+@colors: #0055ff, #ff00b7, #ba3030, #969a80, #0048ff;
+
+.container {
+    background-color: @primary-color;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: @text-color;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        margin-bottom: 10px;
+
+        &:nth-child(1) {
+            label {
+                color: @text-color;
+            }
+
+            input[type="email"] {
+                width: 100%;
+                padding: 10px;
+                background-color: @secondary-color;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+
+        &:nth-child(2) {
+            label {
+                color: @text-color;
+            }
+
+            input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                background-color: @secondary-color;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+
+        // Estilos para los radio buttons
+        &:nth-child(n + 3) {
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+// Mixin para aplicar colores a las opciones de radio
+.apply-radio-colors(@index, @offset) when (@index <= length(@colors)) {
+    @target-index: (@index + @offset); // Calcular el índice real para nth-child
+    ul li:nth-child(@{target-index}) label {
+        background-color: extract(@colors, @index);
+        // color: extract(@colors, @index);
+    }
+    .apply-radio-colors(@index + 1, @offset);
+}
+
+// Llamar al mixin para aplicar los colores a las 5 opciones
+.apply-radio-colors(1, 2); // Pasamos 2 como offset para ajustar el índice base
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: @button-color;
+    color: @text-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(@button-color, 5%);
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
